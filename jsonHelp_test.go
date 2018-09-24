@@ -15,7 +15,7 @@ var b, err = json.Marshal(tempData)
 
 func TestString(t *testing.T) {
 	var d data
-	JsonToObj(`{"Name":"dog", "Age":10}`, &d)
+	JSONToObj(`{"Name":"dog", "Age":10}`, &d)
 	if d.Name != "dog" && d.Age != 10 {
 		t.Errorf(`TestString`)
 	}
@@ -23,7 +23,7 @@ func TestString(t *testing.T) {
 
 func TestByte(t *testing.T) {
 	var d data
-	JsonToObj([]byte(`{"Name":"dog", "Age":10}`), &d)
+	JSONToObj([]byte(`{"Name":"dog", "Age":10}`), &d)
 	if d.Name != "dog" && d.Age != 10 {
 		t.Errorf(`TestByte`)
 	}
@@ -31,7 +31,7 @@ func TestByte(t *testing.T) {
 
 func TestByteToMap(t *testing.T) {
 	var d map[string]interface{}
-	JsonToObj([]byte(`{"name":"dog", "age":10}`), &d)
+	JSONToObj([]byte(`{"name":"dog", "age":10}`), &d)
 	if d["name"] != "dog" && d["age"] != 10 {
 		t.Errorf(`TestByteToMap`)
 	}
@@ -39,7 +39,7 @@ func TestByteToMap(t *testing.T) {
 
 func TestStringToMap(t *testing.T) {
 	var d map[string]interface{}
-	JsonToObj(`{"name":"dog", "age":10}`, &d)
+	JSONToObj(`{"name":"dog", "age":10}`, &d)
 	if d["name"] != "dog" && d["age"] != 10 {
 		t.Errorf(`TestStringToMap`)
 	}
