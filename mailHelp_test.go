@@ -6,7 +6,7 @@ import (
 )
 
 func TestMail(t *testing.T) {
-	userMail := "ymagain@qq.com"
+	userMail := "xxx@qq.com"
 	body := fmt.Sprintf(`
 	<p>If your need change WorkOS.top password, please click this button Within 48 hours. </p>
 	<a href="http://workos.top/change-password/%s/%s/" >Change My Password</a>
